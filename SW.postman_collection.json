@@ -1,0 +1,1545 @@
+{
+	"info": {
+		"_postman_id": "b22dc726-01f8-49ea-8edd-410e7884f43a",
+		"name": "SW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"SetTokenGlobal\", function () {",
+									"   pm.environment.set(\"access_token\", pm.response.json().access);",
+									"   pm.environment.set(\"refresh_token\", pm.response.json().refresh);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Episodio1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}login/",
+							"host": [
+								"{{host}}login"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"SetTokenGlobal\", function () {",
+									"   pm.environment.set(\"access_token\", pm.response.json().access);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNTczNzQyNSwianRpIjoiMTM1YWMxYTZlYzE2NDY0Yjk2ODZkY2E0NTdiNWYwZmYiLCJ1c2VyX2lkIjo0fQ.RI4sB0swVWBlDtUwetOVGuzDIUrXXILPDJwD4sg02Ik",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}refresh-token/",
+							"host": [
+								"{{host}}refresh-token"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"SetTokenGlobal\", function () {",
+									"   pm.environment.set(\"access_token\", pm.response.json().access);",
+									"   pm.environment.set(\"refresh_token\", pm.response.json().refresh);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "3",
+									"description": "Opcional:  Click aqui\n        (1, (\"Admin\")),\n        (2, (\"Teacher\")),\n        (3, (\"Student\")),",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Irving Gonzalez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "student2@student.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Episodio1",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "Episodio1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}register/",
+							"host": [
+								"{{host}}register"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"SetTokenGlobal\", function () {",
+									"   pm.environment.set(\"access_token\", pm.response.json().access);",
+									"   pm.environment.set(\"refresh_token\", pm.response.json().refresh);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "3",
+									"description": "Opcional:  Click aqui\n        (1, (\"Admin\")),\n        (2, (\"Teacher\")),\n        (3, (\"Student\")),",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Irving Gonzalez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "student3@student.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Episodio1",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "Episodio1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}register/",
+							"host": [
+								"{{host}}register"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Teacher",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"SetTokenGlobal\", function () {",
+									"   pm.environment.set(\"access_token\", pm.response.json().access);",
+									"   pm.environment.set(\"refresh_token\", pm.response.json().refresh);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "2",
+									"description": "Opcional:  Click aqui\n        (1, (\"Admin\")),\n        (2, (\"Teacher\")),\n        (3, (\"Student\")),",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Irving Gonzalez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "teacher@teacher.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Episodio1",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "Episodio1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}register/",
+							"host": [
+								"{{host}}register"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}user/",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "is_active",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get students",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}user/?type=3",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "is_active",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "3",
+									"description": "        (2, (\"Teacher\")),\n        (3, (\"Student\")),"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get teachers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}user/?type=2",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "is_active",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"description": "        (2, (\"Teacher\")),\n        (3, (\"Student\")),"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}me/",
+							"host": [
+								"{{host}}me"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/irv205/Downloads/images.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "full_name",
+									"value": "Irving Gonzalez",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "irving6@yopmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Episodio2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "confirm_password",
+									"value": "Episodio2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}update-user/:id/",
+							"host": [
+								"{{host}}update-user"
+							],
+							"path": [
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "get courses available for student",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}available-courses",
+							"host": [
+								"{{host}}available-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-all-courses?id=5",
+							"host": [
+								"{{host}}get-all-courses"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-courses",
+							"host": [
+								"{{host}}get-courses"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Ingles",
+									"type": "text"
+								},
+								{
+									"key": "previous",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}courses",
+							"host": [
+								"{{host}}courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Fundamentos de programacion",
+									"type": "text"
+								},
+								{
+									"key": "previous",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": "4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}courses/:pk/",
+							"host": [
+								"{{host}}courses"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete course by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}courses/:pk/",
+							"host": [
+								"{{host}}courses"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lesson",
+			"item": [
+				{
+					"name": "get lessons available for student",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}available-lessons",
+							"host": [
+								"{{host}}available-lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-lessons?id=6",
+							"host": [
+								"{{host}}get-lessons"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Programacion",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "POO",
+									"type": "text"
+								},
+								{
+									"key": "previous",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}lessons",
+							"host": [
+								"{{host}}lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update lesson by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Gramatica 2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "previous",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "next",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "passing_score",
+									"value": "40",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}lessons/:pk/",
+							"host": [
+								"{{host}}lessons"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete lesson by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}lessons/:pk/",
+							"host": [
+								"{{host}}lessons"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "get questions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-questions",
+							"host": [
+								"{{host}}get-questions"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "lesson",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lesson",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "question",
+									"value": "Enumera el orden en el que se hace un sistema web",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "4",
+									"description": "(1, (\"Boolean\")),\n(2, (\"Multiple choice where only one answer is correct\")),\n(3, (\"Multiple choice where more than one answer is correct\")),\n(4, (\"Multiple choice where more than one answer is correct and all of them must be answered correctly\")),",
+									"type": "text"
+								},
+								{
+									"key": "score",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}questions",
+							"host": [
+								"{{host}}questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update question by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lesson",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "question",
+									"value": "¿Que es un acento?",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"description": "(1, (\"Boolean\")),\n(2, (\"Multiple choice where only one answer is correct\")),\n(3, (\"Multiple choice where more than one answer is correct\")),\n(4, (\"Multiple choice where more than one answer is correct and all of them must be answered correctly\")),",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "score",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}questions/:pk/",
+							"host": [
+								"{{host}}questions"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete questions by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}questions/:pk/",
+							"host": [
+								"{{host}}questions"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "get Answer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-answers",
+							"host": [
+								"{{host}}get-answers"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create answer by question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": 9,\n    \"options\": [\n        \"desarrollo\",\n        \"requerimientos\",\n        \"implementacion\",\n        \"estimaciones\",\n        \"pruebas\"\n    ],\n    \"answer\": [\n        \"requerimientos\",\n        \"estimaciones\",\n        \"desarrollo\",\n        \"pruebas\",\n        \"implementacion\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}answers",
+							"host": [
+								"{{host}}answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update answer by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"question\": 1,\n    \"options\": [\n        \"Elemento articulatorio\",\n        \"Es un misterio\",\n        \"Un alien grande\",\n        \"No se, tu dime\"\n    ],\n    \"answer\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}answers/:pk/",
+							"host": [
+								"{{host}}answers"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete answer by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}answers/:pk/",
+							"host": [
+								"{{host}}answers"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Assignment",
+			"item": [
+				{
+					"name": "get all courses by student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-student-courses",
+							"host": [
+								"{{host}}get-student-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all questions by student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}get-student-questions",
+							"host": [
+								"{{host}}get-student-questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assignment Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user",
+									"value": "3",
+									"description": "id del estudiante",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "5",
+									"description": "id del curso",
+									"type": "text"
+								},
+								{
+									"key": "lesson",
+									"value": "6",
+									"description": "id de la leccion -> relacionada al curso",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}assignment-course",
+							"host": [
+								"{{host}}assignment-course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update assignment Course by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lesson",
+									"value": "6",
+									"description": "id del lesson",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}assignment-course/:pk/",
+							"host": [
+								"{{host}}assignment-course"
+							],
+							"path": [
+								":pk",
+								""
+							],
+							"variable": [
+								{
+									"key": "pk",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Answer lesson questions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": 3,\n    \"question\": [\n        6,\n        7,\n        8,\n        9\n    ],\n    \"lesson\": 6,\n    \"answer\": [\n        \"Falso\",\n        \"Fortran\",\n        \"int,numero\",\n        \"requerimientos,estimaciones,desarrollo,pruebas,implementacion\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}answer-question",
+							"host": [
+								"{{host}}answer-question"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
