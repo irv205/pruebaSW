@@ -1,11 +1,11 @@
-Boilerplate (Django, Django REST Framework)
+(Django, Django REST Framework)
 
 > Framework [Django 3.1.6](https://docs.djangoproject.com/en/3.1/releases/3.1/)
 
 ## Indice
 
 * [Requisitos](#Requisitos)
-* [Estructura Boilerplate](#Estructura)
+* [Estructura proyecto](#Estructura)
 * [Instalacion](#Instalacion)
 * [Postman](#Postman)
 * [Documentacion](#Documentacion)
@@ -28,7 +28,7 @@ pip install setuptools
 ## Estructura del proyecto
 
 ```
-boilerplate/
+SW/
     venv/
         ...
     apps/
